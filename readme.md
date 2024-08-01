@@ -1,7 +1,9 @@
 # GUNSHOT
-BLABLA description
-
-[konpsar](https://github.com/konpsar)
+Todo:
+1. Maybe change name
+2. Add description
+3. Mention [konpsar](https://github.com/konpsar) as contributor
+4. Maybe add license
 
 ## Installation
 
