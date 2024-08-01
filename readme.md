@@ -1,6 +1,8 @@
 # GUNSHOT
 BLABLA description
 
+[konpsar](https://github.com/konpsar)
+
 ## Installation
 
 1. Create a new `python 3.8` environment.
@@ -76,5 +78,19 @@ When the execution reaches the end (all input files have been processed), the re
 
 ### Results
 
+In the corresponding output folder, you can find:
 
-:warning: Important note: In case you re-run the algorithm with the same input folder (e.g. with a different probability threshold), all previous exported segments will be deleted and only the new ones will be kept. The rest of the files won’t be deleted.
+- **`detections`**: A folder where some intermediate files of the analysis are saved, in order to skip the first part of the algorithm if the same files are analyzed again with a different probability threshold.
+
+  - In case you have selected to also export wav audio files for each detection segment, a folder `extracted_segments` where all the segments that have been detected and classified as gunshots are saved in .wav format.
+
+  - In case you haven’t selected to export separated Raven compatible files for each input recording:
+    - `Results_raven.txt`: Detections table compatible with Raven
+    - `Results_raven.xlsx`: Detections table in an Excel file format
+
+  - In case you have selected to export separated Raven compatible files for each input recording, one more subfolder will be created with the title `separated_results`, where all the exported Raven compatible files will be extracted.
+
+- **Analysis_report_XXXXXX_XXXXXX.txt**: A report of the analysis which contains all the important information about the parameters used, the files analyzed, and the exported files.
+
+
+> :warning: Important note: In case you re-run the algorithm with the same input folder (e.g. with a different probability threshold), all previous exported segments will be deleted and only the new ones will be kept. The rest of the files won’t be deleted.
