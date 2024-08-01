@@ -1,0 +1,6 @@
+__pycache__
+.conda 
+.venv
+results
+wavs
+GunshotDetectorManual.pdf
