@@ -31,7 +31,7 @@ Todo:
 2. Execute `gui.py` file.
 
     ```bash
-    python3 gui.p
+    python3 gui.py
     ```
 
 ![gui](Images/gui.png)
