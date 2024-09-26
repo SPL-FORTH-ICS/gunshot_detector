@@ -79,7 +79,7 @@ def main():
         fileDuration=librosa.get_duration(filename=wavFilePath)
         accumulativeDuration +=fileDuration
         if fileDuration<maxDur:
-            fileTimeBorders=np.array((0,fileDuration))
+            fileTimeBorders=np.array([0,fileDuration])
             allTimeBorders.append(fileTimeBorders)
             allWavFilePaths.append(wavFilePath)
             allAccumulativeDurations.append(accumulativeDuration)
@@ -90,17 +90,15 @@ def main():
                 fileTimeBorders = np.append(fileTimeBorders, fileDuration)
             Nsegments = len(fileTimeBorders)-1
             for s in range(Nsegments):
-                allTimeBorders.append([fileTimeBorders[s],fileTimeBorders[s+1]])
+                allTimeBorders.append(np.array([fileTimeBorders[s],fileTimeBorders[s+1]]))  #added np.array
                 allWavFilePaths.append(wavFilePath)
                 allAccumulativeDurations.append(accumulativeDuration)          
 
     Npartitions=len(allAccumulativeDurations)
-    # print("args", args)
-    # print(allTimeBorders)
-    # print(allAccumulativeDurations)
-    for partitionIdx in range(Npartitions-1): #range(0,Nsegm-1):       
+    # print('ste timeBorders ' + str(allTimeBorders[0]) + ' ' + str(allTimeBorders[1]))
+    for partitionIdx in range(Npartitions): #range(0,Nsegm-1):       
         # process_segment(allWavFilePaths,outputDataPath,allAccumulativeDurations,allTimeBorders,partitionIdx,modelFilePath,probThresh)
-        pool.apply_async(process_segment, args=(allWavFilePaths,outputDataPath,allAccumulativeDurations,allTimeBorders,(partitionIdx, Npartitions-1),modelFilePath,probThresh))
+        pool.apply_async(process_segment, args=(allWavFilePaths,outputDataPath,allAccumulativeDurations,allTimeBorders,(partitionIdx, Npartitions),modelFilePath,probThresh))
 
         
     pool.close()
@@ -118,5 +116,4 @@ def main():
     # df.to_csv((outputDataPath + '/wavFileNames.txt'), index=False, header=False) #, mode='a')    
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__mai
