@@ -90,4 +90,4 @@ def bp_process_segment(wavNames,outputFilePath,allAccumulativeDurations,timeBord
                 pickle.dump({ 'detectionsList':detectionsList.T,'Nw': wavNames[partitionIdx],
                              'Nr':recName,'Ndetections':Ndetections,'accumulativeDuration':allAccumulativeDurations[partitionIdx],
                              'onsetThreshold':detectionParams['threshold'],'dcOffset':dcOffset,
-                             'timeBordersInSeconds': [timeBorders[partitionIdx],timeBorders[partitionIdx+1]]}, fid) #, 'probs':sawProbs
+                             'timeBordersInSeconds': [timeBorders[partitionIdx][0],timeBorders[partitionIdx][1]]}, fid) #, 'probs':sawProbs
