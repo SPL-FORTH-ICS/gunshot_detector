@@ -116,4 +116,5 @@ def main():
     # df.to_csv((outputDataPath + '/wavFileNames.txt'), index=False, header=False) #, mode='a')    
 
 
-if __name__ == "__mai
+if __name__ == "__main__":
+    main()
