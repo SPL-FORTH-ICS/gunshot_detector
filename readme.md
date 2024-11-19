@@ -20,7 +20,7 @@ Todo:
 3. Validate packages installation. 
 
     ```bash
-    python3 setup/check_lids.py
+    python3 setup/check_libs.py
     ```
     If everything is installed correctly the message  `Everything works fine!` will be printed.
 
