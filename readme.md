@@ -15,9 +15,7 @@ Todo:
 2. Install required packages. 
 
     ```bash
-    cd setup
-    pip install -r requirements.txt
-    cd ..
+    pip install -r setup/requirements.txt
     ```
 
 3. Validate packages installation. 
